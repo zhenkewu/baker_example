@@ -1,0 +1,8 @@
+structure(list(debugstatus = FALSE, individual.pred = FALSE, 
+    ppd = TRUE, n.chains = 1, n.itermcmc = 100, n.burnin = 1, 
+    n.thin = 1, result.folder = "C:/organize_baker/scn_3_mixiter_1/rep_1_kfit_2", 
+    bugsmodel.dir = "C:/organize_baker/scn_3_mixiter_1/rep_1_kfit_2", 
+    jags.dir = "", use_jags = TRUE), .Names = c("debugstatus", 
+"individual.pred", "ppd", "n.chains", "n.itermcmc", "n.burnin", 
+"n.thin", "result.folder", "bugsmodel.dir", "jags.dir", "use_jags"
+))

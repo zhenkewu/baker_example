@@ -1,0 +1,12 @@
+structure(list(BrS_objects = structure(list(BrS_object_1 = structure(list(
+    quality = "BrS", patho = c("A", "B", "C", "D", "E", "F"), 
+    name_in_data = c("A_MBS1", "B_MBS1", "C_MBS1", "D_MBS1", 
+    "E_MBS1", "F_MBS1"), template = structure(c(1L, 0L, 0L, 0L, 
+    0L, 0L, 0L, 0L, 1L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 1L, 0L, 0L, 
+    0L, 0L, 0L, 0L, 0L, 1L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 1L, 0L, 
+    0L, 0L, 0L, 0L, 0L, 0L, 1L, 0L), .Dim = c(7L, 6L)), specimen = "MBS", 
+    test = "1", nm_spec_test = "MBS1"), .Names = c("quality", 
+"patho", "name_in_data", "template", "specimen", "test", "nm_spec_test"
+))), .Names = "BrS_object_1"), patho_taxo_dir = "C:/organize_baker/pathogen_category_simulation.csv", 
+    allow_missing = FALSE), .Names = c("BrS_objects", "patho_taxo_dir", 
+"allow_missing"))

@@ -1,0 +1,8 @@
+r0_1 <-
+c(0.5, NA)
+r1_1 <-
+c(0.5, NA)
+alphadp0_1 <-
+1
+alphadp0_case_1 <-
+1

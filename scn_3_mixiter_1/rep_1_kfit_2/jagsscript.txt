@@ -1,0 +1,19 @@
+model clear
+data clear
+model in "C:/organize_baker/scn_3_mixiter_1/rep_1_kfit_2/model_NoReg.bug"
+cd "C:/organize_baker/scn_3_mixiter_1/rep_1_kfit_2"
+data in "jagsdata.txt"
+compile, nchains(1)
+inits in "jagsinits1.txt", chain(1)
+initialize
+update 1, by(2)
+monitor ThetaBS_1, thin(1)
+monitor PsiBS_1, thin(1)
+monitor Lambda_1, thin(1)
+monitor Eta_1, thin(1)
+monitor alphadp0_1, thin(1)
+monitor alphadp0_case_1, thin(1)
+monitor pEti, thin(1)
+monitor MBS.new_1, thin(1)
+update 99, by(2)
+coda *
