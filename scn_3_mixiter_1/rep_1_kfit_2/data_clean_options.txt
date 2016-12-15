@@ -7,6 +7,6 @@ structure(list(BrS_objects = structure(list(BrS_object_1 = structure(list(
     0L, 0L, 0L, 0L, 0L, 0L, 1L, 0L), .Dim = c(7L, 6L)), specimen = "MBS", 
     test = "1", nm_spec_test = "MBS1"), .Names = c("quality", 
 "patho", "name_in_data", "template", "specimen", "test", "nm_spec_test"
-))), .Names = "BrS_object_1"), patho_taxo_dir = "C:/organize_baker/pathogen_category_simulation.csv", 
+))), .Names = "BrS_object_1"), patho_taxo_dir = "~/Downloads/run_baker_example/pathogen_category_simulation.csv", 
     allow_missing = FALSE), .Names = c("BrS_objects", "patho_taxo_dir", 
 "allow_missing"))

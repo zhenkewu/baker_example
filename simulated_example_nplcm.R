@@ -19,7 +19,7 @@ rm(list=ls())
 library(baker)
 
 # parent directory for testing code:
-working_dir <- "C:/organize_baker"
+working_dir <- "~/Downloads/run_baker_example"
 
 K.true  <- 2   # no. of latent subclasses in actual simulation. 
 # If eta = c(1,0), K.true is effectively 1.
@@ -40,7 +40,7 @@ MYGRID <- expand.grid(list(rep   = 1:NREP, # data replication.
 n_seed   <- nrow(unique(MYGRID[,-3]))
 seed_seq <- rep(1:n_seed,times=length(unique(MYGRID[,3])))
 
-SEG   <- 1 # can be 1 to nrow(MYGRID)=3000; here we just simulate one data set.
+SEG   <- 1 # The value could be 1 to nrow(MYGRID)=3000; here we just simulate one data set.
 scn   <- MYGRID$scn[SEG]
 k_fit <- 2#MYGRID$k_fit[SEG] 
 iter  <- MYGRID$iter[SEG] 
@@ -53,7 +53,7 @@ lambda   <- c(0.5,0.5) #c(curr_mix,1-curr_mix)
 eta      <- c(curr_mix,1-curr_mix) 
 
 # set fixed simulation sequence:
-seed_start <- 20151017  
+seed_start <- 20161215  
 set.seed(seed_start+seed_seq[SEG])
 
 if (scn == 3){
@@ -133,9 +133,9 @@ m_opt1 <- list(likelihood   = list(cause_list = cause_list,               # <---
                                      BrS  = list(info  = "informative",
                                                  input = "direct_beta_param",
                                                  val   = list(
-                                                   MBS1 = list(alpha = rep(6,length(set_parameter$pathogen_BrS)),
-                                                               beta = rep(2,length(set_parameter$pathogen_BrS))
-                                                   )
+                                                          MBS1 = list(alpha = list(rep(6,length(set_parameter$pathogen_BrS))),
+                                                                      beta  = list(rep(2,length(set_parameter$pathogen_BrS)))
+                                                                     )
                                                  )
                                                  
                                      )#,

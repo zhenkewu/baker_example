@@ -4,9 +4,9 @@ structure(list(likelihood = structure(list(cause_list = c("A",
 "k_subclass", "Eti_formula", "FPR_formula")), use_measurements = "BrS", 
     prior = structure(list(Eti_prior = c(1, 1, 1, 1, 1, 1), TPR_prior = structure(list(
         BrS = structure(list(info = "informative", input = "direct_beta_param", 
-            val = structure(list(MBS1 = structure(list(alpha = c(6, 
-            6, 6, 6, 6, 6), beta = c(2, 2, 2, 2, 2, 2)), .Names = c("alpha", 
-            "beta"))), .Names = "MBS1")), .Names = c("info", 
+            val = structure(list(MBS1 = structure(list(alpha = list(
+                c(6, 6, 6, 6, 6, 6)), beta = list(c(2, 2, 2, 
+            2, 2, 2))), .Names = c("alpha", "beta"))), .Names = "MBS1")), .Names = c("info", 
         "input", "val"))), .Names = "BrS")), .Names = c("Eti_prior", 
     "TPR_prior"))), .Names = c("likelihood", "use_measurements", 
 "prior"))

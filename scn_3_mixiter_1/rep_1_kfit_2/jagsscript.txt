@@ -1,7 +1,7 @@
 model clear
 data clear
-model in "C:/organize_baker/scn_3_mixiter_1/rep_1_kfit_2/model_NoReg.bug"
-cd "C:/organize_baker/scn_3_mixiter_1/rep_1_kfit_2"
+model in "~/Downloads/run_baker_example/scn_3_mixiter_1/rep_1_kfit_2/model_NoReg.bug"
+cd "/Users/zhenkewu/Downloads/run_baker_example/scn_3_mixiter_1/rep_1_kfit_2"
 data in "jagsdata.txt"
 compile, nchains(1)
 inits in "jagsinits1.txt", chain(1)

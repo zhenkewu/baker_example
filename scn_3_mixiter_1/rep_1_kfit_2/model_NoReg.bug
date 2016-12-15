@@ -1,10 +1,11 @@
 model{#BEGIN OF MODEL:
-# BrS measurements:
+
+        # BrS measurements:
         for (i in 1:Nd){
-        
+            
         ## case BrS measurements; with subclasses:
         for (j in 1:JBrS_1){
-        indBS_1[i,j] <- equals(1,templateBS_1[Icat[i],j])
+        indBS_1[i,j] <- templateBS_1[Icat[i],j]
         MBS_1[i,j]~dbern(mu_bs.bound_1[i,j])
         mu_bs.bound_1[i,j]<-max(0.000001,min(0.999999,mu_bs_1[i,j]))
         mu_bs_1[i,j]<-PR_BS_1[i,j,Z_1[i]]
@@ -13,7 +14,7 @@ model{#BEGIN OF MODEL:
         PR_BS_1[i,j,s]<-PsiBS_1[j,s]*(1-indBS_1[i,j])+ThetaBS_1[j,s]*indBS_1[i,j]
         }
         ## posterior predictive distribution:
-        indBS.new_1[i,j] <- equals(1,templateBS_1[Icat.new[i],j])
+        indBS.new_1[i,j] <- templateBS_1[Icat.new[i],j]
         MBS.new_1[i,j]~dbern(mu_bs.bound.new_1[i,j])
         mu_bs.bound.new_1[i,j]<-max(0.000001,min(0.999999,mu_bs.new_1[i,j]))
         mu_bs.new_1[i,j]<-PR_BS.new_1[i,j,Z.new_1[i]]
@@ -25,7 +26,7 @@ model{#BEGIN OF MODEL:
         
         }
         for (i in (Nd+1):(Nd+Nu)){
-           
+               
           ## control BrS measurements;  with subclasses:
           for (j in 1:JBrS_1){
               MBS_1[i,j]~dbern(mu_bs.bound_1[i,j])
@@ -61,22 +62,22 @@ model{#BEGIN OF MODEL:
     Lambda0_1[1]<-r0_1[1]
     r0_1[K_1]<-1
     for(j in 2:K_1) {Lambda0_1[j]<-r0_1[j]*(1-r0_1[j-1])*Lambda0_1[j-1]/r0_1[j-1]}
-    for(k in 1:K_1-1){
+    for(k in 1:(K_1-1)){
     r0_1[k]~dbeta(1,alphadp0_1)T(0.000001,0.999999)
     }
     
-    for (k in 1:K_1-1){Lambda_1[k]<-max(0.000001,min(0.999999,Lambda0_1[k]))}
+    for (k in 1:(K_1-1)){Lambda_1[k]<-max(0.000001,min(0.999999,Lambda0_1[k]))}
     Lambda_1[K_1]<-1-sum(Lambda_1[1:(K_1-1)])
     
     # case subclass mixing weights:
     Eta0_1[1]<-r1_1[1]
     r1_1[K_1]<-1
     for(j in 2:K_1) {Eta0_1[j]<-r1_1[j]*(1-r1_1[j-1])*Eta0_1[j-1]/r1_1[j-1]}
-    for(k in 1:K_1-1){
+    for(k in 1:(K_1-1)){
     r1_1[k]~dbeta(1,alphadp0_case_1)T(0.000001,0.999999)
     }
     
-    for (k in 1:K_1-1){Eta_1[k]<-max(0.000001,min(0.999999,Eta0_1[k]))}
+    for (k in 1:(K_1-1)){Eta_1[k]<-max(0.000001,min(0.999999,Eta0_1[k]))}
     Eta_1[K_1]<-1-sum(Eta_1[1:(K_1-1)])
     
     alphadp0_1~dgamma(.25,.25)T(0.001,20)
@@ -96,11 +97,11 @@ model{#BEGIN OF MODEL:
     
 
 
-      # etiology priors
-      for (i in 1:Nd){
-        Icat[i] ~ dcat(pEti[1:Jcause])
-        Icat.new[i] ~ dcat(pEti[1:Jcause])
-      }
-      pEti[1:Jcause]~ddirch(alpha[])
+          # etiology priors
+          for (i in 1:Nd){
+                Icat[i] ~ dcat(pEti[1:Jcause])
+          Icat.new[i] ~ dcat(pEti[1:Jcause])
+          }
+          pEti[1:Jcause]~ddirch(alphaEti[])
 
 }#END OF MODEL.
