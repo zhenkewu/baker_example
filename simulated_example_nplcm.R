@@ -19,7 +19,7 @@ rm(list=ls())
 library(baker)
 
 # parent directory for testing code:
-working_dir <- "~/Downloads/run_baker_example"
+working_dir <- "~/run_baker_example"
 dir.create(working_dir)
 
 K.true  <- 2   # no. of latent subclasses in actual simulation. 
@@ -228,6 +228,8 @@ plot_selected_etiology(selected = c("A","B","C"), result_folder, 1, 5)
 dev.off()
 
 # grouped etiology (e.g., bacteria (left) vs virus (right) )
+download.file("https://raw.githubusercontent.com/zhenkewu/baker_example/master/pathogen_category_simulation.csv", file.path(working_dir,"pathogen_category_simulation.csv"))
+
 pdf(file.path(result_folder,"group_etiology.pdf"),height=15,width=15)
 plot_group_etiology(result_folder,dir_taxo = file.path(working_dir,
                                                        "pathogen_category_simulation.csv"))
