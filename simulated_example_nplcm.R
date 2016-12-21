@@ -19,7 +19,7 @@ rm(list=ls())
 library(baker)
 
 # parent directory for testing code:
-working_dir <- "~/run_baker_example"
+working_dir <- "~/Downloads/run_baker_example"
 dir.create(working_dir)
 
 K.true  <- 2   # no. of latent subclasses in actual simulation. 
