@@ -17,9 +17,10 @@
 
 rm(list=ls())
 library(baker)
+library(binom)
 
 # parent directory for testing code:
-working_dir <- "~/Downloads/run_baker_example"
+working_dir <- tempdir() # <-- create a temporary directory.
 dir.create(working_dir)
 
 K.true  <- 2   # no. of latent subclasses in actual simulation. 
